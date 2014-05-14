@@ -9,7 +9,7 @@ var API = function () {
       type: "POST",
       url: url,
       data: data,
-      dataType: "json",
+      dataType: "jsonp",
       timeout: TIMEOUT,
       crossDomain: true,
       headers: {
