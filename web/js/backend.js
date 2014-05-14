@@ -6,7 +6,7 @@ var API = function () {
   return function (resource, data, callback) {
     var url  = API_URL + resource;
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: url,
       data: JSON.stringify(data || {}),
       dataType: "jsonp",
