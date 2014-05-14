@@ -12,6 +12,9 @@ var API = function () {
       dataType: "json",
       timeout: TIMEOUT,
       crossDomain: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
       success: function (data) {
         console.log(data);
       },
