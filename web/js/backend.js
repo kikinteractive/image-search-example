@@ -11,6 +11,7 @@ var API = function () {
       data: data,
       dataType: "json",
       timeout: TIMEOUT,
+      crossDomain: true,
       success: function (data) {
         console.log(data);
       },
