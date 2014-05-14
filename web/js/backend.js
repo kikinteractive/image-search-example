@@ -5,10 +5,24 @@ var API = function () {
 
   return function (resource, data, callback) {
     var url  = API_URL + resource;
-    $.post(url, data, function (data, textStatus, jqXHR) {
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: data,
+      dataType: "jsonp",
+      timeout: TIMEOUT,
+      crossDomain: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+      success: function (data) {
+        console.log(data);
+      },
+      error: function (request, status, err) {
+        console.log(request);
+        console.log(status);
+        console.log(err);
+      }
     });
   };
 
