@@ -9,16 +9,17 @@ var API = function () {
       type: "POST",
       url: url,
       data: data,
-      dataType: "jsonp",
+      dataType: "json",
       timeout: TIMEOUT,
       crossDomain: true,
       headers: {
         'Access-Control-Allow-Origin': '*'
       },
-      success: function (data) {
-        console.log(data);
+      success: function (response, status) {
+        console.log(response);
+        console.log(status);
       },
-      error: function (request, status, err) {
+      error: function (response, status, err) {
         console.log(request);
         console.log(status);
         console.log(err);
