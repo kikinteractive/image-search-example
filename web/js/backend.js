@@ -8,7 +8,7 @@ var API = function () {
     $.ajax({
       type: "POST",
       url: url,
-      data: data,
+      data: JSON.stringify(data || {}),
       dataType: "jsonp",
       timeout: TIMEOUT,
       crossDomain: true,
