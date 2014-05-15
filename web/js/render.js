@@ -1,5 +1,7 @@
 var showPlaceholder = function (page, status) {
 
+  console.log(page);
+
   var placeholder = page.querySelector('.placeholder');
   var loader      = page.querySelector('.loader');
   var imageList   = page.querySelector('.image-list');
