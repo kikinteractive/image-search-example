@@ -1,5 +1,6 @@
 var showPlaceholder = function (page, status) {
 
+  console.log('TEST: ' + page);
   console.log('TEST: ' + page.data('page'));
 
   var placeholder = page.querySelector('.placeholder');
