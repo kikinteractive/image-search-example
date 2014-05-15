@@ -1,6 +1,6 @@
 var showPlaceholder = function (page, status) {
 
-  console.log(page.getAttribute('data-page'));
+  var currentPage = page.getAttribute('data-page');
 
   var placeholder = page.querySelector('.placeholder');
   var loader      = page.querySelector('.loader');
@@ -11,17 +11,25 @@ var showPlaceholder = function (page, status) {
   imageList.classList.remove('active');
 
   if (status === 'error') {
-    placeholder.classList.remove('search');
+    placeholder.classList.remove(currentPage);
     placeholder.classList.add('error');
     placeholder.innerHTML = '<span></span>Network Error';
   } else if (status === 'empty') {
-    placeholder.classList.add('search');
+    placeholder.classList.add(currentPage);
     placeholder.classList.remove('error');
-    placeholder.innerHTML = '<span></span>No Results';
+    if (currentPage === 'search') {
+      placeholder.innerHTML = '<span></span>No Results';
+    } else if (currentPage === 'favs') {
+      placeholder.innerHTML = '<span></span>No favorites yet';
+    }
   } else {
-    placeholder.classList.add('search');
+    placeholder.classList.add(currentPage);
     placeholder.classList.remove('error');
-    placeholder.innerHTML = '<span></span>Search for Images';
+    if (currentPage === 'search') {
+      placeholder.innerHTML = '<span></span>Search for Images';
+    } else if (currentPage === 'favs') {
+      placeholder.innerHTML = '<span></span>No favorites yet';
+    }
   }
 };
 
