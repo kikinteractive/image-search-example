@@ -109,7 +109,8 @@ var layoutResults = function (page) {
 
 var renderResults = function (page, currentTime, images, query) {
 
-  var imageList   = page.querySelector('.image-list');
+  var imageList   = page.querySelector('.image-list'),
+      resultTmpl  = page.querySelector('.result');
 
   if (imageList.childNodes) {
     for (var child; child=imageList.childNodes[0];) {
