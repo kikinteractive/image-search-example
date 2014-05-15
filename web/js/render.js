@@ -107,10 +107,9 @@ var layoutResults = function (page) {
 
 };
 
-var renderResults = function (page, currentTime, images, query) {
+var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
-  var imageList   = page.querySelector('.image-list'),
-      resultTmpl  = page.querySelector('.result');
+  var imageList   = page.querySelector('.image-list');
 
   if (imageList.childNodes) {
     for (var child; child=imageList.childNodes[0];) {
@@ -209,7 +208,7 @@ var renderResults = function (page, currentTime, images, query) {
 
 };
 
-var showResults = function (page, currentTime, images, query) {
+var showResults = function (page, currentTime, resultTmpl, images, query) {
 
   if ( !images ) {
     showPlaceholder(page, 'error');
@@ -228,5 +227,5 @@ var showResults = function (page, currentTime, images, query) {
   loader.classList.remove('active');
   imageList.classList.add('active');
 
-  renderResults(page, currentTime, images, query);
+  renderResults(page, currentTime, resultTmpl, images, query);
 };

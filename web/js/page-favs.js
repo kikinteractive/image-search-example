@@ -8,7 +8,7 @@ App.controller('favs', function (page) {
       currentTime;
 
   if ( Saved.list().length ) {
-    showResults(page, currentTime, Saved.list());
+    showResults(page, currentTime, resultTmpl, Saved.list());
   } else {
     showPlaceholder(page, 'empty');
   }
@@ -21,7 +21,7 @@ App.controller('favs', function (page) {
 
   Saved.on('update', function () {
     if ( Saved.list().length ) {
-      showResults(page, currentTime, Saved.list());
+      showResults(page, currentTime, resultTmpl, Saved.list());
     } else {
       showPlaceholder(page, 'favs');
     }

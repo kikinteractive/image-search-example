@@ -57,7 +57,7 @@ App.controller('search', function (page) {
     currentTime  = time;
 
     if (query in cache) {
-      showResults(page, currentTime, cache[query], query);
+      showResults(page, currentTime, resultTmpl, cache[query], query);
       return;
     }
 
@@ -68,14 +68,14 @@ App.controller('search', function (page) {
       API('/search/', { q: query }, function (status, images) {
         if (status === 0) {
           if ((currentQuery === query) && (currentTime === time)) {
-            showResults(page, currentTime, null, query);
+            showResults(page, currentTime, resultTmpl, null, query);
           }
           return;
         }
 
         cache[query] = images;
         if ((currentQuery === query) && (currentTime === time)) {
-          showResults(page, currentTime, images, query);
+          showResults(page, currentTime, resultTmpl, images, query);
         }
       });
     });
