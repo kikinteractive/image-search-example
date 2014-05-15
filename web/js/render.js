@@ -211,6 +211,8 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
 var showResults = function (page, currentTime, resultTmpl, images, query) {
 
+  console.log(page);
+
   if ( !images ) {
     showPlaceholder(page, 'error');
     return;
