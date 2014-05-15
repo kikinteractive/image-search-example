@@ -8,8 +8,7 @@ App.controller('favs', function (page) {
     showPlaceholder(page, 'empty');
   }
 
-  resultTmpl.style.display = 'none';
-  //resultTmpl.parentNode.removeChild(resultTmpl);
+  resultTmpl.parentNode.removeChild(resultTmpl);
 
   page.addEventListener('appLayout', function () {
     layoutResults(page);

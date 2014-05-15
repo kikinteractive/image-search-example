@@ -9,8 +9,7 @@ App.controller('search', function (page) {
       cache       = {},
       currentQuery, currentTime;
 
-  resultTmpl.style.display = 'none';
-  //resultTmpl.parentNode.removeChild(resultTmpl);
+  resultTmpl.parentNode.removeChild(resultTmpl);
 
   showPlaceholder(page);
 
