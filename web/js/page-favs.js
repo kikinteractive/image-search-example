@@ -8,7 +8,7 @@ App.controller('favs', function (page) {
       currentTime;
 
   if ( Saved.list().length ) {
-    showResults(Saved.list());
+    showResults(page, currentTime, Saved.list());
   } else {
     showPlaceholder(page, 'empty');
   }
@@ -21,100 +21,11 @@ App.controller('favs', function (page) {
 
   Saved.on('update', function () {
     if ( Saved.list().length ) {
-      showResults(Saved.list());
+      showResults(page, currentTime, Saved.list());
     } else {
       showPlaceholder(page, 'favs');
     }
   });
-
-  function showLoader() {
-    placeholder.classList.remove('active');
-    loader.classList.add('active');
-    imageList.classList.remove('active');
-  }
-
-  function showResults(images) {
-    if ( !images ) {
-      showPlaceholder(page, 'error');
-      return;
-    }
-    if ( !images.length ) {
-      showPlaceholder(page, 'empty');
-      return;
-    }
-
-    placeholder.classList.remove('active');
-    loader.classList.remove('active');
-    imageList.classList.add('active');
-
-    renderResults(images);
-  }
-
-  function renderResults(images) {
-    if (imageList.childNodes) {
-      for (var child; child=imageList.childNodes[0];) {
-        child.parentNode.removeChild(child);
-      }
-    }
-
-    var renderTime = currentTime,
-        numImages  = images.length,
-        badImages  = [];
-
-    images.forEach(function (image, index) {
-      renderImage(image, index);
-    });
-
-    layoutResults();
-
-    function renderImage(image, index) {
-      var result = resultTmpl.cloneNode(true),
-          img    = result.querySelector('img');
-
-      result.setAttribute('data-height', image.height+'');
-      result.setAttribute('data-width' , image.width +'');
-      imageList.appendChild(result);
-
-      var start = +new Date();
-
-      img.onload = function () {
-        img.onload = img.onerror = null;
-
-        if ((App.platform !== 'ios') || (+new Date()-start < 50)) {
-          img.classList.add('visible');
-          return;
-        }
-
-        img.classList.add('animated');
-        setTimeout(function () {
-          img.classList.add('visible');
-          setTimeout(function () {
-            img.classList.remove('animated');
-          }, 400);
-        }, 10);
-      };
-
-      img.onerror = function () {
-        img.onload = img.onerror = null;
-        badImages.push(index);
-        if (result.parentNode) {
-          result.parentNode.removeChild(result);
-          layoutResults(); //TODO: is this janky?
-        }
-      };
-
-      img.src = image.url;
-
-      Clickable.sticky(img, function (unlock) {
-        App.load('viewer', {
-          image     : image  ,
-          index     : index  ,
-          images    : images ,
-          badImages : badImages
-        }, unlock);
-      });
-    }
-  }
 
   function layoutResults() {
     var resultNodes = [];
