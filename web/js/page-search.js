@@ -2,14 +2,9 @@ App.controller('search', function (page) {
   var INPUT_KEY  = '__SEARCH_INPUT__',
       SEARCH_KEY = '__SEARCH_QUERY__';
 
-  var pageManager = this,
-      content     = page.querySelector('.app-content'),
-      form        = page.querySelector('form'),
+  var form        = page.querySelector('form'),
       input       = page.querySelector('form .app-input'),
-      results     = page.querySelector('.results'),
       placeholder = page.querySelector('.placeholder'),
-      loader      = page.querySelector('.loader'),
-      imageList   = page.querySelector('.image-list'),
       resultTmpl  = page.querySelector('.result'),
       cache       = {},
       currentQuery, currentTime;
