@@ -1,10 +1,9 @@
 App.controller('favs', function (page) {
-  
-  var resultTmpl  = page.querySelector('.result'),
-      currentTime;
+
+  var resultTmpl  = page.querySelector('.result');
 
   if ( Saved.list().length ) {
-    showResults(page, currentTime, resultTmpl, Saved.list());
+    showResults(page, null, resultTmpl, Saved.list());
   } else {
     showPlaceholder(page, 'empty');
   }
@@ -17,7 +16,7 @@ App.controller('favs', function (page) {
 
   Saved.on('update', function () {
     if ( Saved.list().length ) {
-      showResults(page, currentTime, resultTmpl, Saved.list());
+      showResults(page, null, resultTmpl, Saved.list());
     } else {
       showPlaceholder(page, 'favs');
     }

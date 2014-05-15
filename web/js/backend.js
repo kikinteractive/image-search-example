@@ -1,6 +1,9 @@
+/**
+ * This file defines API calls to server to fetch images from the search query.
+ */
+
 var API = function () {
 
-  //TODO: alternate url
   var API_URL = 'https://image-search-backend.appspot.com',
       TIMEOUT = 25 * 1000;
 
