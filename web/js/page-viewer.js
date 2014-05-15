@@ -98,9 +98,8 @@ App.controller('viewer', function (page, data) {
       setHeartIcon();
     }, false);
 
-  function setHeartIcon() {
+  function setHeartIcon () {
     var image = data.images ? data.images[data.index] : data.image;
-
     if (Saved.has(image)) {
       page.querySelector('.app-button.heart').classList.add('fav');
     } else {

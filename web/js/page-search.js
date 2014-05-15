@@ -38,7 +38,7 @@ App.controller('search', function (page) {
     performSearch(input.value);
   });
 
-  function performSearch(query) {
+  function performSearch (query) {
     query = query.trim();
     if (!query || ( (query === currentQuery) && !placeholder.classList.contains('error') ) ) {
       return;
@@ -69,7 +69,6 @@ App.controller('search', function (page) {
           }
           return;
         }
-
         cache[query] = images;
         if ((currentQuery === query) && (currentTime === time)) {
           showResults(page, currentTime, resultTmpl, images, query);

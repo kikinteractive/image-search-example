@@ -19,7 +19,7 @@ var API = function () {
     xhr.onload = function () {
       xhrComplete(xhr.status);
     };
-    
+
     xhr.onerror = function () {
       xhrComplete(xhr.status);
     };
@@ -40,7 +40,7 @@ var API = function () {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     xhr.send( JSON.stringify(data || {}) );
 
-    function xhrComplete(status) {
+    function xhrComplete (status) {
       if (done) return;
       done = true;
       var response;

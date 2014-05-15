@@ -9,7 +9,7 @@ var Saved = function () {
   });
   return saved;
 
-  function getCache() {
+  function getCache () {
     try {
       return JSON.parse( localStorage[SAVED_KEY] );
     } catch (err) {
@@ -17,11 +17,11 @@ var Saved = function () {
     }
   };
 
-  function setCache(cache) {
+  function setCache (cache) {
     localStorage[SAVED_KEY] = JSON.stringify(cache);
   };
 
-  function getList() {
+  function getList () {
     var cache  = getCache(),
         images = [];
     for (var i in cache) {
@@ -30,7 +30,7 @@ var Saved = function () {
     return images;
   };
 
-  function toggleSaved(image) {
+  function toggleSaved (image) {
     var cache = getCache();
     if (image.url in cache) {
       delete cache[image.url];
@@ -41,7 +41,7 @@ var Saved = function () {
     saved.trigger('update');
   };
 
-  function isSaved(image) {
+  function isSaved (image) {
     return image.url in getCache();
   };
 
