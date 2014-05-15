@@ -130,6 +130,8 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
   content.addEventListener('scroll', loadMoreItems, false);
 
+  resultTmpl.style.display = 'block';
+
   function loadMoreItems () {
 
     var scrollNode    = Scrollable.node(content),
