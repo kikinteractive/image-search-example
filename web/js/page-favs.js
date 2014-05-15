@@ -10,7 +10,7 @@ App.controller('favs', function (page) {
   if ( Saved.list().length ) {
     showResults(Saved.list());
   } else {
-    showPlaceholder('empty');
+    showPlaceholder(page, 'empty');
   }
 
   resultTmpl.parentNode.removeChild(resultTmpl);
@@ -23,29 +23,9 @@ App.controller('favs', function (page) {
     if ( Saved.list().length ) {
       showResults(Saved.list());
     } else {
-      showPlaceholder('favs');
+      showPlaceholder(page, 'favs');
     }
   });
-
-  function showPlaceholder(status) {
-    placeholder.classList.add('active');
-    loader.classList.remove('active');
-    imageList.classList.remove('active');
-
-    if (status === 'error') {
-      placeholder.classList.remove('favs');
-      placeholder.classList.add('error');
-      placeholder.innerHTML = '<span></span>Network Error';
-    } else if (status === 'empty') {
-      placeholder.classList.add('favs');
-      placeholder.classList.remove('error');
-      placeholder.innerHTML = '<span></span>No favorites yet';
-    } else {
-      placeholder.classList.add('favs');
-      placeholder.classList.remove('error');
-      placeholder.innerHTML = '<span></span>No favorites yet';
-    }
-  }
 
   function showLoader() {
     placeholder.classList.remove('active');
@@ -55,11 +35,11 @@ App.controller('favs', function (page) {
 
   function showResults(images) {
     if ( !images ) {
-      showPlaceholder('error');
+      showPlaceholder(page, 'error');
       return;
     }
     if ( !images.length ) {
-      showPlaceholder('empty');
+      showPlaceholder(page, 'empty');
       return;
     }
 

@@ -16,7 +16,7 @@ App.controller('search', function (page) {
 
   resultTmpl.parentNode.removeChild(resultTmpl);
 
-  showPlaceholder();
+  showPlaceholder(page);
 
   if (this.restored) {
     input.value = localStorage[INPUT_KEY] || '';
@@ -41,26 +41,6 @@ App.controller('search', function (page) {
     performSearch(input.value);
   }, false);
 
-  function showPlaceholder(status) {
-    placeholder.classList.add('active');
-    loader.classList.remove('active');
-    imageList.classList.remove('active');
-
-    if (status === 'error') {
-      placeholder.classList.remove('search');
-      placeholder.classList.add('error');
-      placeholder.innerHTML = '<span></span>Network Error';
-    } else if (status === 'empty') {
-      placeholder.classList.add('search');
-      placeholder.classList.remove('error');
-      placeholder.innerHTML = '<span></span>No Results';
-    } else {
-      placeholder.classList.add('search');
-      placeholder.classList.remove('error');
-      placeholder.innerHTML = '<span></span>Search for Images';
-    }
-  }
-
   function showLoader() {
     placeholder.classList.remove('active');
     loader.classList.add('active');
@@ -69,11 +49,11 @@ App.controller('search', function (page) {
 
   function showResults(images, query) {
     if ( !images ) {
-      showPlaceholder('error');
+      showPlaceholder(page, 'error');
       return;
     }
     if ( !images.length ) {
-      showPlaceholder('empty');
+      showPlaceholder(page, 'empty');
       return;
     }
 
