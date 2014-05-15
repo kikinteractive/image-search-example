@@ -47,7 +47,7 @@ App.controller('search', function (page) {
 
     localStorage[SEARCH_KEY] = query;
 
-    var time = +new Date();
+    var time = Date.now();
     currentQuery = query;
     currentTime  = time;
 

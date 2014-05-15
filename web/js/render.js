@@ -165,12 +165,12 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
     result.setAttribute('data-width' , image.width +'');
     imageList.appendChild(result);
 
-    var start = +new Date();
+    var start = Date.now();
 
     img.onload = function () {
       img.onload = img.onerror = null;
 
-      if ((App.platform !== 'ios') || (+new Date()-start < 50)) {
+      if ((App.platform !== 'ios') || (Date.now()-start < 50)) {
         img.classList.add('visible');
         return;
       }
