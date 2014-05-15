@@ -109,6 +109,8 @@ var layoutResults = function (page) {
 
 var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
+  resultTmpl.style.display = 'block';
+
   var imageList   = page.querySelector('.image-list'),
       content     = page.querySelector('.app-content');
 
@@ -129,8 +131,6 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
   layoutResults(page);
 
   content.addEventListener('scroll', loadMoreItems, false);
-
-  resultTmpl.style.display = 'block';
 
   function loadMoreItems () {
 
