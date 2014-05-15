@@ -113,6 +113,7 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
       content     = page.querySelector('.app-content');
 
   resultTmpl = page.querySelector('.result');
+  resultTmpl.parentNode.removeChild(resultTmpl);
 
   if (imageList.childNodes) {
     for (var child; child=imageList.childNodes[0];) {
