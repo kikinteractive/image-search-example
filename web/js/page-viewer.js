@@ -1,4 +1,5 @@
 App.controller('viewer', function (page, data) {
+
   var $title = page.querySelector('.app-title'),
       query  = (data.query || data.image.query),
       urls;
@@ -105,5 +106,6 @@ App.controller('viewer', function (page, data) {
     } else {
       page.querySelector('.app-button.heart').classList.remove('fav');
     }
-  }
+  };
+
 });

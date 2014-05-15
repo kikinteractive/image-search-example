@@ -1,4 +1,5 @@
 var Saved = function () {
+
   var SAVED_KEY = '__IMAGE_SAVED_CACHE__';
 
   var saved = kik.events({
@@ -14,11 +15,11 @@ var Saved = function () {
     } catch (err) {
       return {};
     }
-  }
+  };
 
   function setCache(cache) {
     localStorage[SAVED_KEY] = JSON.stringify(cache);
-  }
+  };
 
   function getList() {
     var cache  = getCache(),
@@ -27,7 +28,7 @@ var Saved = function () {
       images.push( cache[i] );
     }
     return images;
-  }
+  };
 
   function toggleSaved(image) {
     var cache = getCache();
@@ -38,9 +39,10 @@ var Saved = function () {
     }
     setCache(cache);
     saved.trigger('update');
-  }
+  };
 
   function isSaved(image) {
     return image.url in getCache();
-  }
+  };
+
 }();

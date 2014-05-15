@@ -1,4 +1,5 @@
 App.controller('search', function (page) {
+
   var INPUT_KEY  = '__SEARCH_INPUT__',
       SEARCH_KEY = '__SEARCH_QUERY__';
 
@@ -23,6 +24,7 @@ App.controller('search', function (page) {
   input.addEventListener('keyup', function () {
     localStorage[INPUT_KEY] = input.value;
   });
+
   input.addEventListener('change', function () {
     localStorage[INPUT_KEY] = input.value;
   });
@@ -74,5 +76,6 @@ App.controller('search', function (page) {
         }
       });
     });
-  }
+  };
+
 });

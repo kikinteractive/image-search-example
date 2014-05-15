@@ -1,4 +1,5 @@
 (function (kik, App) {
+
   if (kik.browser && kik.browser.setOrientationLock) {
     kik.browser.setOrientationLock('portrait');
   }
@@ -12,4 +13,5 @@
       App.load('search');
     }
   }
+
 })(kik, App);

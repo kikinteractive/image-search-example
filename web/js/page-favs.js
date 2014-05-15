@@ -1,4 +1,5 @@
 App.controller('favs', function (page) {
+  
   var resultTmpl  = page.querySelector('.result'),
       currentTime;
 
