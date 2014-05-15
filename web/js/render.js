@@ -107,7 +107,9 @@ var layoutResults = function (page) {
 
 };
 
-var renderResults = function (currentTime, images, query) {
+var renderResults = function (page, currentTime, images, query) {
+
+  var imageList   = page.querySelector('.image-list');
 
   if (imageList.childNodes) {
     for (var child; child=imageList.childNodes[0];) {
@@ -225,5 +227,5 @@ var showResults = function (page, currentTime, images, query) {
   loader.classList.remove('active');
   imageList.classList.add('active');
 
-  renderResults(currentTime, images, query);
+  renderResults(page, currentTime, images, query);
 };
