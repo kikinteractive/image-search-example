@@ -12,7 +12,7 @@ App.controller('favs', function (page) {
 
   page.addEventListener('appLayout', function () {
     layoutResults(page);
-  }, false);
+  });
 
   Saved.on('update', function () {
     if ( Saved.list().length ) {

@@ -22,19 +22,19 @@ App.controller('search', function (page) {
 
   input.addEventListener('keyup', function () {
     localStorage[INPUT_KEY] = input.value;
-  }, false);
+  });
   input.addEventListener('change', function () {
     localStorage[INPUT_KEY] = input.value;
-  }, false);
+  });
 
   page.addEventListener('appLayout', function () {
     layoutResults(page);
-  }, false);
+  });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     performSearch(input.value);
-  }, false);
+  });
 
   function performSearch(query) {
     query = query.trim();
