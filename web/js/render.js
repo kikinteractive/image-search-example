@@ -1,3 +1,4 @@
+// Function to render the placeholder when there are no images to be shown
 var showPlaceholder = function (page, status) {
 
   var currentPage = page.getAttribute('data-page');
@@ -33,6 +34,7 @@ var showPlaceholder = function (page, status) {
   }
 };
 
+// Function to render the loading indicator when searching an image
 var showLoader = function (page) {
 
   var placeholder = page.querySelector('.placeholder');
@@ -45,6 +47,7 @@ var showLoader = function (page) {
 
 };
 
+// Function to renders images in the grid-like layout
 var layoutResults = function (page) {
 
   var imageList   = page.querySelector('.image-list');
@@ -107,6 +110,7 @@ var layoutResults = function (page) {
 
 };
 
+// Function to render images
 var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
   var imageList   = page.querySelector('.image-list'),
@@ -121,7 +125,7 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
   var renderTime = currentTime,
       numImages  = images.length,
       badImages  = [],
-      pivot      = numImages; //TODO: can we dynamically load at some point?
+      pivot      = numImages;
 
   images.slice(0, pivot).forEach(function (image, index) {
     renderImage(image, index, query);
@@ -210,8 +214,6 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
 };
 
 var showResults = function (page, currentTime, resultTmpl, images, query) {
-
-  console.log(page);
 
   if ( !images ) {
     showPlaceholder(page, 'error');
