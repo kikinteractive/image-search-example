@@ -4,6 +4,7 @@
 
 App.controller('favs', function (page) {
 
+  // Get HTML elements
   var resultTmpl  = page.querySelector('.result');
 
   if ( Saved.list().length ) {
@@ -24,8 +25,10 @@ App.controller('favs', function (page) {
   // Re-renders images when a new one is favored/unfavored
   Saved.on('update', function () {
     if ( Saved.list().length ) {
+      // Show favored images if there are any
       showResults(page, null, resultTmpl, Saved.list());
     } else {
+      // Show empty placeholder otherwise
       showPlaceholder(page, 'favs');
     }
   });
