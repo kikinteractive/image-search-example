@@ -189,7 +189,7 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
       badImages.push(index);
       if (result.parentNode) {
         result.parentNode.removeChild(result);
-        layoutResults(page); //TODO: is this janky?
+        layoutResults(page);
       }
     };
 

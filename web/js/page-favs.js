@@ -18,6 +18,8 @@ App.controller('favs', function (page) {
   // Clear up rendered images
   resultTmpl.parentNode.removeChild(resultTmpl);
 
+  // Updates images layout when orientation changes, window resizes and page
+  // placements
   page.addEventListener('appLayout', function () {
     layoutResults(page);
   });

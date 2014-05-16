@@ -45,6 +45,8 @@ App.controller('search', function (page) {
     localStorage[INPUT_KEY] = input.value;
   });
 
+  // Updates images layout when orientation changes, window resizes and page
+  // placements.
   page.addEventListener('appLayout', function () {
     layoutResults(page);
   });
