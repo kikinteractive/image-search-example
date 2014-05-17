@@ -66,6 +66,7 @@ var layoutResults = function (page) {
     currentIndex += layoutRow(currentIndex);
   }
 
+  // Function to render one row of images
   function layoutRow (index, numResults) {
     if ( !numResults ) {
       numResults = Math.min(3, resultNodes.length-index);
@@ -110,7 +111,7 @@ var layoutResults = function (page) {
 
 };
 
-// Function to render images
+// Function to render image search results and favored images
 var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
   var imageList   = page.querySelector('.image-list'),
@@ -160,6 +161,7 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
   };
 
+  // Function to render a single image
   function renderImage (image, index, query) {
 
     var result = resultTmpl.cloneNode(true),
@@ -199,6 +201,7 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
     img.src = image.url;
 
+    // When image is clicked, open up the image viewer
     Clickable.sticky(img, function (unlock) {
       App.load('viewer', {
         query     : query  ,
@@ -213,6 +216,8 @@ var renderResults = function (page, currentTime, resultTmpl, images, query) {
 
 };
 
+// Function to render the placeholder if there are errors or no images
+// otherwise render image results
 var showResults = function (page, currentTime, resultTmpl, images, query) {
 
   if ( !images ) {
