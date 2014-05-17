@@ -1,6 +1,9 @@
 var Saved = function () {
+
+  // Keys to use for the HTML5 web storage
   var SAVED_KEY = '__IMAGE_SAVED_CACHE__';
 
+  // Bind functions to Kik events
   var saved = kik.events({
     list   : getList     ,
     toggle : toggleSaved ,
@@ -8,28 +11,32 @@ var Saved = function () {
   });
   return saved;
 
-  function getCache() {
+  // Get cached image from web storage
+  function getCache () {
     try {
       return JSON.parse( localStorage[SAVED_KEY] );
     } catch (err) {
       return {};
     }
-  }
+  };
 
-  function setCache(cache) {
+  // Cache image in web storage
+  function setCache (cache) {
     localStorage[SAVED_KEY] = JSON.stringify(cache);
-  }
+  };
 
-  function getList() {
+  // Get list of cached images
+  function getList () {
     var cache  = getCache(),
         images = [];
     for (var i in cache) {
       images.push( cache[i] );
     }
     return images;
-  }
+  };
 
-  function toggleSaved(image) {
+  // Toggle whether an image is favored or not
+  function toggleSaved (image) {
     var cache = getCache();
     if (image.url in cache) {
       delete cache[image.url];
@@ -38,9 +45,11 @@ var Saved = function () {
     }
     setCache(cache);
     saved.trigger('update');
-  }
+  };
 
-  function isSaved(image) {
+  // Check if image is already in the web storage
+  function isSaved (image) {
     return image.url in getCache();
-  }
+  };
+
 }();
