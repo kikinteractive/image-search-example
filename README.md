@@ -20,7 +20,7 @@ From the command line:
 **Run Debug Server**
 
 1. Run `npm start`
-2. Visit [localhost:5000](localhost:5000) on your browser to see the app running.
+2. Visit [localhost:5000](http://localhost:5000/) on your browser to see the app running.
 
 ### Troubleshooting dependencies
 
