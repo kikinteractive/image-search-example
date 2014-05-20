@@ -19,8 +19,7 @@ From the command line:
 
 **Unfamiliar with npm or if you don't have node installed?** That's okay! NPM stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
 
-
-
+<br />
 **Run Debug Server**
 
 1. Run `npm start`
