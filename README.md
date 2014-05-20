@@ -13,7 +13,7 @@ Image Search is an official open sourced Kik Messenger app that allows you to se
 
 From the command line:
 
-1. Navigate to the root `/image-search-example-master` directory, then run `npm install`. NPM will look at [package.json](https://github.com/twbs/bootstrap/blob/master/package.json) and automatically install the necessary local dependencies listed there.
+1. Navigate to the root `/image-search` directory, then run `npm install`. NPM will look at [package.json](https://github.com/twbs/bootstrap/blob/master/package.json) and automatically install the necessary local dependencies listed there.
 
 **Unfamiliar with npm or if you don't have node installed?** That's okay! NPM stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
 
