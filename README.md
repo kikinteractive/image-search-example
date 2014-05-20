@@ -2,7 +2,7 @@
 
 Image Search is an official open sourced Kik Messenger app that allows you to search for images and share them with your friends on Kik.
 
-<img align="left " src="sample.png">
+<img align="left" style="float:left" src="sample.png">
 
 ### Make It Your Own
 
