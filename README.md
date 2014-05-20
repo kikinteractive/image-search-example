@@ -1,4 +1,4 @@
-# Image Search   [![Kite](https://usekite.com/live-demo-button.png)](https://usekite.com/deploy)
+# Image Search    [![Kite](https://usekite.com/live-demo-button.png)](https://localhost/deploy)
 
 Image Search is an official open sourced Kik Messenger app that allows you to search for images and share them with your friends on Kik.
 
