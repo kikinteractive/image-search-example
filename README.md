@@ -11,7 +11,7 @@ Image Search is an official open sourced Kik Messenger app that allows you to se
   3. Click the **Live Demo** button on your repository to view the results of your changes.
   4. Share your app with your friends on Kik Messenger! The link is provided to you when you click on the **Live Demo** button.  
   
-Note: To use the **Live Demo** button on your own fork, you will need to sign up for a Kite account. To sign up, simply, click the **Live Demo** button on your own repository.   
+**Note:** To use the **Live Demo** button on your own fork, you will need to sign up for a Kite account. To sign up, simply, click the **Live Demo** button on your own repository.   
 
 ### Local Setup
 
