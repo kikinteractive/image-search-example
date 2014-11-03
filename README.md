@@ -1,19 +1,8 @@
-# Image Search    [![Kite](https://usekite.com/live-demo-button.png)](https://usekite.com/deploy/yHfKKGPGcD5wFsrxE)
+# Image Search    [![Kite](https://usekite.com/live-demo-button.png)](http://testdrive.kik.com/?app=image-search)
 
 Image Search is an official open sourced Kik Messenger app that allows you to search for images and share them with your friends on Kik.
 
 <img align="left" style="float:left;" src="sample.png">
-
-
-### Make It Your Own
-
-  1. Fork this repository
-  2. Make edits with your favorite tools, and commit your code
-  3. Click the **Live Demo** button on your repository to view the results of your changes.
-  4. Share your app with your friends on Kik Messenger! The link is provided to you when you click on the **Live Demo** button.  
-
-**Note:** To use the **Live Demo** button on your own fork, you will need to sign up for a Kite account. To sign up, simply, click the **Live Demo** button on your own repository.   
-
 
 ### Local Setup
 
@@ -32,6 +21,7 @@ From the command line:
 ### Kik Developer Resources
 
 All developer resources can be found on [http://dev.kik.com](http://dev.kik.com).
+
 
 
 ### Copyright and License
